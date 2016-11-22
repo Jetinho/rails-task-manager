@@ -2,4 +2,9 @@
 <div>
   <h2><%= @task.title %></h2>
   <p><%= @task.description %></p>
+    <p> - <%= @task.created_at.strftime("%d/%m/%Y") %> at <%= @task.created_at.strftime("%H:%M") %></p>
+  <p><%= link_to "Edit task", (edit_task_path(@task)) %></p>
+  <p><%= link_to "Delete task", task_path(@task), method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <p><%= link_to "Back to TO-DO list", tasks_path %></p>
 </div>
+
